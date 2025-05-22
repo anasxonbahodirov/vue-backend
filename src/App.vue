@@ -140,9 +140,10 @@ onMounted(() => {
     </transition>
 
     <div class="max-w-7xl mx-auto mb-10 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">___________Users___________</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">User Management</h1>
       <p class="text-slate-300 max-w-2xl mx-auto">
-        _________________Special for you_________________
+        This is a simple user management application built with Vue 3 and Tailwind CSS. You can add,
+        view, and delete users.
       </p>
     </div>
 
