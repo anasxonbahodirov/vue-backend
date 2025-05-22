@@ -106,15 +106,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 w-full p-6 md:p-10">
+  <div class="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 w-full p-4 sm:p-6 md:p-8 lg:p-10">
     <transition name="fade">
       <div
         v-if="showToast"
-        :class="`fixed top-6 right-6 z-50 px-6 py-3 rounded-lg shadow-lg text-white font-medium flex items-center 
+        :class="`fixed top-4 sm:top-6 right-4 sm:right-6 z-50 px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow-lg text-sm sm:text-base text-white font-medium flex items-center 
                    ${toastType === 'success' ? 'bg-emerald-500' : 'bg-rose-500'}`"
       >
         <svg
-          class="w-5 h-5 mr-2"
+          class="w-4 h-4 sm:w-5 sm:h-5 mr-2"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -139,37 +139,37 @@ onMounted(() => {
       </div>
     </transition>
 
-    <div class="max-w-7xl mx-auto mb-10 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">User Management</h1>
-      <p class="text-slate-300 max-w-2xl mx-auto">
+    <div class="max-w-7xl mx-auto mb-6 sm:mb-8 md:mb-10 text-center">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">User Management</h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
         This is a simple user management application built with Vue 3 and Tailwind CSS. You can add,
         view, and delete users.
       </p>
     </div>
 
-    <div class="max-w-6xl mx-auto mb-16">
+    <div class="max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16">
       <form
         @submit="addUser"
-        class="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-2xl border border-white/10"
+        class="bg-white/10 backdrop-blur-lg rounded-xl p-4 sm:p-6 shadow-2xl border border-white/10"
       >
-        <h2 class="text-2xl font-semibold text-white mb-6">Add New User</h2>
+        <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">Add New User</h2>
 
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-          <div class="space-y-4">
-            <h3 class="text-lg font-medium text-emerald-300 mb-3">Personal Information</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+          <div class="space-y-3 sm:space-y-4">
+            <h3 class="text-base sm:text-lg font-medium text-emerald-300 mb-2 sm:mb-3">Personal Information</h3>
 
             <div class="relative">
               <input
                 type="text"
                 v-model="user.name"
                 id="name"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                 placeholder=" "
                 required
               />
               <label
                 for="name"
-                class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                 >Full Name</label
               >
             </div>
@@ -179,33 +179,33 @@ onMounted(() => {
                 type="text"
                 v-model="user.username"
                 id="username"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                 placeholder=" "
                 required
               />
               <label
                 for="username"
-                class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                 >Username</label
               >
             </div>
           </div>
 
-          <div class="space-y-4">
-            <h3 class="text-lg font-medium text-emerald-300 mb-3">Contact Information</h3>
+          <div class="space-y-3 sm:space-y-4">
+            <h3 class="text-base sm:text-lg font-medium text-emerald-300 mb-2 sm:mb-3">Contact Information</h3>
 
             <div class="relative">
               <input
                 type="email"
                 v-model="user.email"
                 id="email"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                 placeholder=" "
                 required
               />
               <label
                 for="email"
-                class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                 >Email Address</label
               >
             </div>
@@ -215,35 +215,35 @@ onMounted(() => {
                 type="tel"
                 v-model="user.phone"
                 id="phone"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                 placeholder=" "
                 required
               />
               <label
                 for="phone"
-                class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                 >Phone Number</label
               >
             </div>
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-          <div class="space-y-4">
-            <h3 class="text-lg font-medium text-emerald-300 mb-3">Company Information</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+          <div class="space-y-3 sm:space-y-4">
+            <h3 class="text-base sm:text-lg font-medium text-emerald-300 mb-2 sm:mb-3">Company Information</h3>
 
             <div class="relative">
               <input
                 type="text"
                 v-model="user.companyName"
                 id="company"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                 placeholder=" "
                 required
               />
               <label
                 for="company"
-                class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                 >Company Name</label
               >
             </div>
@@ -253,34 +253,34 @@ onMounted(() => {
                 type="text"
                 v-model="user.website"
                 id="website"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                 placeholder=" "
                 required
               />
               <label
                 for="website"
-                class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                 >Website</label
               >
             </div>
           </div>
 
-          <div class="space-y-4">
-            <h3 class="text-lg font-medium text-emerald-300 mb-3">Address Information</h3>
+          <div class="space-y-3 sm:space-y-4">
+            <h3 class="text-base sm:text-lg font-medium text-emerald-300 mb-2 sm:mb-3">Address Information</h3>
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
               <div class="relative">
                 <input
                   type="text"
                   v-model="user.street"
                   id="street"
-                  class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                  class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                   placeholder=" "
                   required
                 />
                 <label
                   for="street"
-                  class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                  class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                   >Street</label
                 >
               </div>
@@ -290,13 +290,13 @@ onMounted(() => {
                   type="text"
                   v-model="user.city"
                   id="city"
-                  class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                  class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                   placeholder=" "
                   required
                 />
                 <label
                   for="city"
-                  class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                  class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                   >City</label
                 >
               </div>
@@ -307,31 +307,31 @@ onMounted(() => {
                 type="text"
                 v-model="user.zipcode"
                 id="zipcode"
-                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
+                class="w-full px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent peer"
                 placeholder=" "
                 required
               />
               <label
                 for="zipcode"
-                class="absolute left-4 top-3 text-white/70 peer-focus:text-emerald-300 peer-focus:text-sm peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-2 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-3"
+                class="absolute left-3 sm:left-4 top-2 sm:top-3 text-xs sm:text-sm text-white/70 peer-focus:text-emerald-300 peer-focus:text-xs peer-focus:-top-2 peer-focus:bg-slate-900 peer-focus:px-1 transition-all duration-200 pointer-events-none peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 sm:peer-placeholder-shown:text-base sm:peer-placeholder-shown:top-3"
                 >Zip Code</label
               >
             </div>
           </div>
         </div>
 
-        <div class="flex justify-end space-x-4">
+        <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4">
           <button
             type="button"
             @click="resetForm"
-            class="px-6 py-2.5 border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors duration-200"
+            class="px-4 py-2 sm:px-6 sm:py-2.5 border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors duration-200"
           >
             Reset
           </button>
           <button
             type="submit"
             :disabled="isSubmitting"
-            class="px-6 py-2.5 bg-emerald-500 rounded-lg text-white font-medium hover:bg-emerald-600 transition-colors duration-200 flex items-center disabled:opacity-70 disabled:cursor-not-allowed"
+            class="px-4 py-2 sm:px-6 sm:py-2.5 bg-emerald-500 rounded-lg text-white font-medium hover:bg-emerald-600 transition-colors duration-200 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
           >
             <svg
               v-if="isSubmitting"
@@ -361,16 +361,16 @@ onMounted(() => {
     </div>
 
     <div class="max-w-7xl mx-auto">
-      <div class="flex justify-between items-center mb-6">
-        <h2 class="text-2xl font-semibold text-white">User Directory</h2>
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 gap-3">
+        <h2 class="text-xl sm:text-2xl font-semibold text-white">User Directory</h2>
         <button
           @click="fetchUsers"
-          class="flex items-center text-sm text-emerald-300 hover:text-emerald-400 transition-colors"
+          class="flex items-center text-xs sm:text-sm text-emerald-300 hover:text-emerald-400 transition-colors"
           :disabled="isLoading"
         >
           <svg
             v-if="isLoading"
-            class="animate-spin mr-2 h-4 w-4 text-white"
+            class="animate-spin mr-2 h-3 w-3 sm:h-4 sm:w-4 text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -393,25 +393,25 @@ onMounted(() => {
         </button>
       </div>
 
-      <div v-if="isLoading && users.length === 0" class="grid place-items-center py-20">
+      <div v-if="isLoading && users.length === 0" class="grid place-items-center py-12 sm:py-20">
         <div class="animate-pulse flex flex-col items-center">
-          <div class="h-12 w-12 bg-emerald-400/20 rounded-full mb-4"></div>
-          <div class="h-4 w-32 bg-white/10 rounded mb-2"></div>
-          <div class="h-4 w-48 bg-white/10 rounded"></div>
+          <div class="h-8 w-8 sm:h-12 sm:w-12 bg-emerald-400/20 rounded-full mb-3 sm:mb-4"></div>
+          <div class="h-3 w-24 sm:h-4 sm:w-32 bg-white/10 rounded mb-1.5 sm:mb-2"></div>
+          <div class="h-3 w-36 sm:h-4 sm:w-48 bg-white/10 rounded"></div>
         </div>
       </div>
 
-      <div v-else-if="users.length === 0" class="text-center py-16 text-white/50">
+      <div v-else-if="users.length === 0" class="text-center py-12 sm:py-16 text-white/50">
         No users found. Add your first user above.
       </div>
 
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         <div
           v-for="(userItem, index) in users"
           :key="userItem.id"
           class="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-emerald-400/30 transition-all duration-300 hover:-translate-y-1"
         >
-          <div class="relative h-48 overflow-hidden">
+          <div class="relative h-40 sm:h-48 overflow-hidden">
             <div
               class="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-purple-500/10"
             ></div>
@@ -420,29 +420,29 @@ onMounted(() => {
               src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
               alt="User avatar"
             />
-            <div class="absolute bottom-4 left-4">
+            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
               <span
-                class="bg-emerald-400/90 text-slate-900 text-xs font-semibold px-2.5 py-1 rounded-full"
+                class="bg-emerald-400/90 text-slate-900 text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full"
               >
                 ID: {{ userItem.id }}
               </span>
             </div>
           </div>
 
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
+          <div class="p-4 sm:p-6">
+            <div class="flex justify-between items-start mb-3 sm:mb-4">
               <div>
-                <h3 class="text-xl font-bold text-white">{{ userItem.name }}</h3>
-                <p class="text-emerald-300 text-sm">@{{ userItem.username }}</p>
+                <h3 class="text-lg sm:text-xl font-bold text-white">{{ userItem.name }}</h3>
+                <p class="text-emerald-300 text-xs sm:text-sm">@{{ userItem.username }}</p>
               </div>
-              <div class="flex space-x-2">
+              <div class="flex space-x-1 sm:space-x-2">
                 <button
                   @click="restoreUser(userItem)"
-                  class="p-2 rounded-full bg-white/5 hover:bg-emerald-400/20 text-emerald-300 hover:text-emerald-400 transition-colors"
+                  class="p-1.5 sm:p-2 rounded-full bg-white/5 hover:bg-emerald-400/20 text-emerald-300 hover:text-emerald-400 transition-colors"
                   title="Restore to form"
                 >
                   <svg
-                    class="w-4 h-4"
+                    class="w-3 h-3 sm:w-4 sm:h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -458,11 +458,11 @@ onMounted(() => {
                 </button>
                 <button
                   @click="deleteUser(userItem.id, index)"
-                  class="p-2 rounded-full bg-white/5 hover:bg-rose-500/20 text-rose-400 hover:text-rose-500 transition-colors"
+                  class="p-1.5 sm:p-2 rounded-full bg-white/5 hover:bg-rose-500/20 text-rose-400 hover:text-rose-500 transition-colors"
                   title="Delete user"
                 >
                   <svg
-                    class="w-4 h-4"
+                    class="w-3 h-3 sm:w-4 sm:h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -479,10 +479,10 @@ onMounted(() => {
               </div>
             </div>
 
-            <div class="space-y-4 text-sm text-white/80">
+            <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-white/80">
               <div class="flex items-start">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 mt-0.5 text-emerald-300"
+                  class="flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 mt-0.5 text-emerald-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -495,12 +495,12 @@ onMounted(() => {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   ></path>
                 </svg>
-                <span class="ml-2">{{ userItem.email }}</span>
+                <span class="ml-2 truncate">{{ userItem.email }}</span>
               </div>
 
               <div class="flex items-start">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 mt-0.5 text-emerald-300"
+                  class="flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 mt-0.5 text-emerald-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -518,7 +518,7 @@ onMounted(() => {
 
               <div class="flex items-start">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 mt-0.5 text-emerald-300"
+                  class="flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 mt-0.5 text-emerald-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -534,14 +534,14 @@ onMounted(() => {
                 <a
                   :href="'https://' + userItem.website"
                   target="_blank"
-                  class="ml-2 hover:text-emerald-300 transition-colors"
+                  class="ml-2 hover:text-emerald-300 transition-colors truncate block"
                   >{{ userItem.website }}</a
                 >
               </div>
 
               <div class="flex items-start">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 mt-0.5 text-emerald-300"
+                  class="flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 mt-0.5 text-emerald-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -554,12 +554,12 @@ onMounted(() => {
                     d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                   ></path>
                 </svg>
-                <span class="ml-2">{{ userItem.companyName }}</span>
+                <span class="ml-2 truncate">{{ userItem.companyName }}</span>
               </div>
 
               <div class="flex items-start">
                 <svg
-                  class="flex-shrink-0 w-4 h-4 mt-0.5 text-emerald-300"
+                  class="flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 mt-0.5 text-emerald-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -578,7 +578,7 @@ onMounted(() => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   ></path>
                 </svg>
-                <span class="ml-2"
+                <span class="ml-2 truncate"
                   >{{ userItem.street }}, {{ userItem.city }}, {{ userItem.zipcode }}</span
                 >
               </div>
@@ -599,7 +599,7 @@ html {
 }
 
 html::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 html::-webkit-scrollbar-track {
@@ -608,7 +608,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
   background-color: #334155;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .fade-enter-active,
@@ -622,5 +622,38 @@ html::-webkit-scrollbar-thumb {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .form-input-label {
+    font-size: 0.75rem;
+  }
+  
+  .user-card-content {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .form-grid {
+    gap: 1rem;
+  }
+  
+  .user-card {
+    min-width: calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 1025px) {
+  .user-card {
+    min-width: calc(33.333% - 1.5rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .user-card {
+    min-width: calc(25% - 1.5rem);
+  }
 }
 </style>
